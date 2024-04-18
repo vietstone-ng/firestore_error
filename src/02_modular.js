@@ -6,6 +6,7 @@ import {
   initializeFirestore,
   collection,
   getDocs,
+  setLogLevel,
 } from 'firebase/firestore'
 
 import firebaseConfig from './firebase_config'
@@ -14,6 +15,7 @@ const app = initializeApp(firebaseConfig)
 
 // NOTE: none of these 2 initializations work
 // const firestore = getFirestore(app)
+setLogLevel('debug');
 const firestore = initializeFirestore(app, {
   experimentalAutoDetectLongPolling: true,
 })
